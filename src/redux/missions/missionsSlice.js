@@ -5,7 +5,7 @@ import axios from 'axios';
 const missionApiUrl = 'https://api.spacexdata.com/v3/missions';
 
 const initialState = {
-  missions: {},
+  missions: [],
   isSucceed: false,
   isLoading: false,
   error: null,

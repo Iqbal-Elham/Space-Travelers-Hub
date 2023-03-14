@@ -5,34 +5,25 @@ import Mission from '../components/Mission';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const ifSucceed = useSelector((store) => (store.missions.isSucceed));
-  const missions = useSelector((store) => store.missions.missions);
-  const isLoading = useSelector((store) => store.missions.isLoading);
+  const isSucceed = useSelector((store) => (store.missions.isSucceed));
+  const { missions } = useSelector((store) => store.missions);
 
   useEffect(() => {
     dispatch(fetchMissions());
-  }, [ifSucceed, dispatch]);
-
-  let content;
-  if (isLoading) {
-    content = <p>Loading</p>;
-  } else if (ifSucceed) {
-    content = Object.keys(missions).map((key) => {
-      const currentMission = missions[key][0];
-      return (
-        <Mission
-          key={key}
-          missionId={currentMission.mission_id}
-          missionName={currentMission.mission_name}
-          description={currentMission.description}
-        />
-      );
-    });
-  }
+  }, [missions, isSucceed, dispatch]);
   return (
     <div>
       <h1>missions</h1>
-      <ul>{content}</ul>
+      <ul>
+        {missions.map((mission) => (
+          <Mission
+            key={mission.mission_id}
+            id={mission.mission_id}
+            name={mission.mission_name}
+            description={mission.description}
+          />
+        ))}
+      </ul>
     </div>
   );
 };
