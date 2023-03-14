@@ -6,7 +6,7 @@ const missionApiUrl = 'https://api.spacexdata.com/v3/missions';
 
 const initialState = {
   missions: {},
-  ifSucceed: false,
+  isSucceed: false,
   isLoading: false,
   error: null,
 };
@@ -33,7 +33,7 @@ const missionSlice = createSlice({
     },
     [fetchMissions.fulfilled]: (state, action) => {
       state.isLoading = false;
-      state.ifSucceed = true;
+      state.isSucceed = true;
       state.missions = action.payload;
     },
     [fetchMissions.rejected]: (state) => {
