@@ -12,7 +12,7 @@ const initialState = {
 };
 
 const fetchMissions = createAsyncThunk(
-  'missions/fetchissions',
+  'missions/fetchMissions',
   async () => {
     try {
       const { data } = await axios.get(missionApiUrl);
