@@ -1,28 +1,28 @@
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 0.5rem;
-    border-bottom: 2px solid rgb(197, 191, 191);
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0.5rem;
+  border-bottom: 2px solid rgb(197, 191, 191);
 }
 
-.navBrand{
-    display: flex;
-    align-items: center;
-    gap: 1em;
+.navBrand {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
-.navbar h1{
-    font-size: 40px;
+.navbar h1 {
+  font-size: 40px;
 }
 
 .navbar ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.navbar ul li:last-child{
-    border-left: 2px solid gray;  
-    padding-left: 1.5rem;
+.navbar ul li:last-child {
+  border-left: 2px solid gray;
+  padding-left: 1.5rem;
 }
