@@ -6,12 +6,13 @@ import '../components/styles/missions.css';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const isSucceed = useSelector((store) => (store.missions.isSucceed));
   const { missions } = useSelector((store) => store.missions);
 
   useEffect(() => {
-    dispatch(fetchMissions());
-  }, [missions, isSucceed, dispatch]);
+    if (missions.length === 0) {
+      dispatch(fetchMissions());
+    }
+  }, []);
   return (
     <div>
       <h1>missions</h1>
