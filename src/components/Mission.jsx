@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import './styles/mission.css';
-import { Button } from 'react-bootstrap';
+import { Button, Badge } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { joinMission, leaveMission } from '../redux/missions/missionsSlice';
 
@@ -13,7 +13,11 @@ const Mission = ({
       <ul className="mission">
         <li><h3 className="name">{name}</h3></li>
         <li><h2 className="title">{description}</h2></li>
-        <span>Not active member</span>
+        <span>
+          { joined
+            ? <Badge bg="info">Active Member</Badge>
+            : <Badge bg="secondary">NOT A MEMBER</Badge>}
+        </span>
         <div>
           {
            joined
