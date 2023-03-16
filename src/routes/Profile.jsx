@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector } from 'react-redux';
+import JoinedMission from '../components/JoinedMission';
 
 const Profile = () => {
   const { missions } = useSelector((store) => store.missions);
