@@ -7,8 +7,8 @@ const Rockets = () => {
   const { allRockets } = useSelector((store) => store.rockets);
   const dispatch = useDispatch();
   useEffect(() => {
-    if (allRockets.length === 0) dispatch(getRockets());
-  }, []);
+    if (!allRockets.length) dispatch(getRockets());
+  }, [dispatch, allRockets]);
 
   return (
     <div>
