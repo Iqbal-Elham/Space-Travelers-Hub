@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rockets component should match to snapshot 1`] = `
+<div
+  className="d-flex p-3 gap-3"
+>
+  <img
+    alt="Rocket"
+    className="img-fluid"
+    height="350"
+    width="470"
+  />
+  <div
+    className="pt-1"
+  >
+    <h2 />
+    <p
+      className="text-justify h5"
+    >
+      <span>
+         
+      </span>
+    </p>
+    <p
+      className="h6"
+    />
+    <div>
+      <button
+        className="mt-4 py-2 px-4 btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Reserve Rocket
+      </button>
+    </div>
+  </div>
+</div>
+`;
