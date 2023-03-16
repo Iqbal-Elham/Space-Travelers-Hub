@@ -7,8 +7,8 @@ const Rockets = () => {
   const { allRockets } = useSelector((store) => store.rockets);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getRockets());
-  }, [dispatch]);
+    if (allRockets.length === 0) dispatch(getRockets());
+  }, []);
 
   return (
     <div>
@@ -20,6 +20,7 @@ const Rockets = () => {
           type={rocket.rocket_type}
           img={rocket.flickr_images}
           description={rocket.description}
+          reserved={rocket.reserved}
         />
       ))}
     </div>

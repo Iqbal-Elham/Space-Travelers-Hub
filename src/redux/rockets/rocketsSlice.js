@@ -4,7 +4,6 @@ const baseUrl = 'https://api.spacexdata.com/v3/rockets';
 
 const initialState = {
   allRockets: [],
-  reserved: false,
   isLoading: false,
 };
 
@@ -25,30 +24,32 @@ export const rocketSlice = createSlice({
   name: 'rocket',
   initialState,
   reducers: {
-    setReserved: (state, action) => {
-      state.allRockets.map((rocket) => {
-        if (rocket.rocket_id !== action.payload) return rocket;
+    setReserved: (state, action) => ({
+      ...state,
+      allRockets: state.allRockets.map((rocket) => {
+        if (action.payload !== rocket.rocket_id) {
+          return rocket;
+        }
         return { ...rocket, reserved: true };
-      });
-    },
-    cancelReserved: (state, action) => {
-      state.allRockets.map((rocket) => {
-        if (rocket.rocket_id !== action.payload) return rocket;
+      }),
+    }),
+    cancelReserved: (state, action) => ({
+      ...state,
+      allRockets: state.allRockets.map((rocket) => {
+        if (action.payload !== rocket.rocket_id) {
+          return rocket;
+        }
         return { ...rocket, reserved: false };
-      });
-    },
+      }),
+    }),
   },
   extraReducers: (builder) => {
-    builder.addCase(getRockets.fulfilled, (state, action) => {
-      const rockets = Object.entries(action.payload).map((rocket) => ({
-        id: rocket[0],
-        ...rocket[1],
-      }));
-      return { ...state, allRockets: rockets };
-    });
     builder.addCase(getRockets.pending, (state) => ({
       ...state,
       isLoading: true,
+    }));
+    builder.addCase(getRockets.fulfilled, (state, action) => ({
+      allRockets: action.payload,
     }));
   },
 });
