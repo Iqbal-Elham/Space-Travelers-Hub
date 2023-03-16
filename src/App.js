@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Rockets from './components/Rockets';
 import Missions from './routes/Missions';
+import Profile from './routes/Profile';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Route path="/" element={<Navbar />}>
           <Route index element={<Rockets />} />
           <Route path="/missions" element={<Missions />} />
-          <Route path="/my-profile" element={<h1>My profile</h1>} />
+          <Route path="/my-profile" element={<Profile />} />
           <Route path="*" element={<div>Page not found</div>} />
         </Route>
       </Routes>
