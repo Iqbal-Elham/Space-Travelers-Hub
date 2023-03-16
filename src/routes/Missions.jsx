@@ -15,15 +15,20 @@ const Missions = () => {
   }, []);
   return (
     <div>
-      <h1>missions</h1>
+      <div className="headers">
+        <h3>Missions</h3>
+        <h3>Description</h3>
+        <h3>Status</h3>
+      </div>
       <ul>
-        {missions.map((mission) => (
+        {missions.map((mission, index) => (
           <Mission
             key={mission.mission_id}
             id={mission.mission_id}
             name={mission.mission_name}
             description={mission.description}
             joined={mission.joined}
+            index={index}
           />
         ))}
       </ul>
