@@ -23,9 +23,9 @@ const Missions = () => {
       <ul>
         {missions.map((mission, index) => (
           <Mission
-            key={mission.mission_id}
-            id={mission.mission_id}
-            name={mission.mission_name}
+            key={mission.missionID}
+            id={mission.missionID}
+            name={mission.missionName}
             description={mission.description}
             joined={mission.joined}
             index={index}
