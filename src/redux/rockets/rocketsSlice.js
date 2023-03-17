@@ -13,7 +13,19 @@ export const getRockets = createAsyncThunk(
     try {
       const response = await fetch(baseUrl);
       const data = await response.json();
-      return data;
+      const rocketsData = [];
+      data.forEach((rock) => {
+        const obj = {
+          rocket_id: rock.rocket_id,
+          rocket_name: rock.rocket_name,
+          description: rock.description,
+          rocket_type: rock.rocket_type,
+          flickr_images: rock.flickr_images[0],
+          reserved: false,
+        };
+        rocketsData.push(obj);
+      });
+      return rocketsData;
     } catch (error) {
       return thunkAPI.rejectWithValue('Something went wrong');
     }
