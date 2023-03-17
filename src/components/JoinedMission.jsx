@@ -11,7 +11,7 @@ const JoinedMission = ({ joinedMissions }) => (
             <ListGroup className="shadow p-3 mb-5 bg-body-tertiary rounded">
               {
                   joinedMissions.map((mission) => (
-                    <ListGroup.Item key={mission.mission_id}>{mission.mission_name}</ListGroup.Item>
+                    <ListGroup.Item key={mission.missionID}>{mission.missionName}</ListGroup.Item>
                   ))
               }
             </ListGroup>
