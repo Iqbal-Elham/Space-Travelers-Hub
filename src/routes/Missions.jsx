@@ -12,7 +12,7 @@ const Missions = () => {
     if (missions.length === 0) {
       dispatch(fetchMissions());
     }
-  }, [dispatch]);
+  }, [dispatch, missions]);
   return (
     <div>
       <div className="headers">
