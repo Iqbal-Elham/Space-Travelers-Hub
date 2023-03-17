@@ -70,7 +70,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- [Coming Soon]()
+- Coming Soon .....
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -143,6 +143,12 @@ Enter the follow code to run the project locally:
 - linkedIn: [fithamlak-fikrie](https://www.linkedin.com/in/fithamlak-fikrie-942169225/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+- [ ] **Making Improvment**
+- [ ] **Deployment**
 
 <!-- CONTRIBUTING -->
 
