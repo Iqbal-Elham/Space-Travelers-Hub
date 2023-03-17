@@ -12,7 +12,7 @@ const Profile = () => {
   return (
     <div className="d-flex">
       <div className="w-50">
-        <h2>My Missions</h2>
+        <h2 data-testid="h2Id">My Missions</h2>
         <JoinedMission mission={missions} joinedMissions={joinedMissions} />
       </div>
       <div className="w-50">
