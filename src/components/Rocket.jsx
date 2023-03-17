@@ -13,7 +13,7 @@ const Rocket = ({ id, name, type, img, description, reserved }) => {
       <img src={img} alt="Rocket" width="470" height="350" className="img-fluid" />
       <div className="pt-1">
         <h2>{name}</h2>
-        <p className="text-justify h5"><span>{reserved ? <Badge>Reserved</Badge> : ''} </span>{description}</p>
+        <p className="text-justify h5"><span>{reserved ? <Badge bg="info">Reserved</Badge> : ''} </span>{description}</p>
         <p className="h6">{type}</p>
         <div>
         {
