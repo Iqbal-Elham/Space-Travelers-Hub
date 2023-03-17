@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test the Rocket file should match to snapshot 1`] = `
+<nav
+  className="navbar"
+>
+  <div
+    className="navBrand"
+  >
+    <img
+      alt="planet logo"
+      src="planet.png"
+      width="70"
+    />
+    <h1>
+      Space Travelers' Hub
+    </h1>
+  </div>
+  <ul>
+    <li>
+      <a
+        aria-current="page"
+        className="active"
+        href="/"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "black",
+            "textDecoration": "underline",
+          }
+        }
+      >
+        Rockets
+      </a>
+    </li>
+    <li>
+      <a
+        className=""
+        href="/missions"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#a19e9e",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Missions
+      </a>
+    </li>
+    <li>
+      <a
+        className=""
+        href="/my-profile"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#a19e9e",
+            "textDecoration": "none",
+          }
+        }
+      >
+        My Profile
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

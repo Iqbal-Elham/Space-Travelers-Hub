@@ -7,7 +7,6 @@ import { Button, Badge } from 'react-bootstrap';
 import { setReserved, cancelReserved } from "../redux/rockets/rocketsSlice";
 
 const Rocket = ({ id, name, type, img, description, reserved }) => {
-  console.log(reserved)
   const dispatch = useDispatch();
   return (
     <div className="d-flex p-3 gap-3">
@@ -43,6 +42,7 @@ Rocket.propTypes = {
   type: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   img: PropTypes.array.isRequired,
+
 };
 
 export default Rocket;
