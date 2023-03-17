@@ -10,13 +10,23 @@ const initialState = {
   error: null,
 };
 
+export const filterrequiredData = (comingArr) => {
+  const missions = comingArr.map((item) => {
+    const { mission_id: missionID, mission_name: missionName, description } = item;
+    return {
+      missionID, missionName, description,
+    };
+  });
+  return missions;
+};
+
 const fetchMissions = createAsyncThunk(
   'missions/fetchMissions',
   async () => {
     try {
       const response = await fetch(missionApiUrl);
       const data = await response.json();
-      return data;
+      return filterrequiredData(data);
     } catch (err) {
       return err.message;
     }
@@ -32,7 +42,7 @@ const missionSlice = createSlice({
       return {
         ...state,
         missions: state.missions.map((mission) => {
-          if (id !== mission.mission_id) {
+          if (id !== mission.missionID) {
             return mission;
           }
           return { ...mission, joined: true };
@@ -44,7 +54,7 @@ const missionSlice = createSlice({
       return {
         ...state,
         missions: state.missions.map((mission) => {
-          if (id !== mission.mission_id) {
+          if (id !== mission.missionID) {
             return mission;
           }
           return { ...mission, joined: false };
